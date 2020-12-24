@@ -1,7 +1,14 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
+import { client } from '../shared/client'
 
 export default function Home() {
+
+  client.product.fetchAll().then((products:any) => {
+    // Do something with the products
+    console.log(products);
+  });
+
   return (
     <div className={styles.container}>
       <Head>
